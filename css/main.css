@@ -1,0 +1,18 @@
+body{
+    background: #4e5250;
+    color: #b0cfbf;
+}
+.search{
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+}
+.go{
+    margin-left: 10px;
+    height: 31px;
+    border: none;
+    border-radius: 3px;
+    font-weight: bold;
+    background: #099650;
+    color: #b0cfbf;
+}

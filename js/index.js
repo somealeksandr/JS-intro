@@ -1,26 +1,21 @@
-var search = document.querySelector('.search')
+var search = document.querySelector('.search');
 var go = document.querySelector('.go');
-var search = search.value;
-var result = document.querySelector('.result');
 
-document.querySelector('.go').addEventListener('click',load);
+go.addEventListener('click',load);
 
 function load() {
-    let url =   `http://www.omdbapi.com/?i=tt3896198&apikey=19a48f87=${search}`;
-    var req = new Request(link);
-
+    var  result = search.value;
+    var url =  `http://www.omdbapi.com/?i=tt3896198&apikey=19a48f87&t=${result}`;
+    var req = new Request(url);
     fetch(req)
     .then((response) =>{
         return response.json();
     })
-    .then((data) =>{
-        console.log(link)
+    .then((data) => {
+        document.querySelector('h1').innerHTML = `${data.Title} ${data.Country} <br> Released: ${data.Released}`
+        var poster = document.querySelector('.poster');
+        poster.innerHTML=`<img src="${data.Poster}" alt="">`;
     })
 }
-
-    
-
-
-   
 
 
